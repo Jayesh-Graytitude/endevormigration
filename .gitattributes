@@ -1,0 +1,9 @@
+bms/*bms zos-working-tree-encoding=IBM-037 git-encoding=utf-8
+cobol/*cbl zos-working-tree-encoding=IBM-037 git-encoding=utf-8
+cobol/TEMPTEST.cbl binary
+copy/*cpy zos-working-tree-encoding=IBM-037 git-encoding=utf-8
+link/*lnk zos-working-tree-encoding=IBM-037 git-encoding=utf-8
+jcl/*jcl zos-working-tree-encoding=IBM-037 git-encoding=utf-8
+*.sh zos-working-tree-encoding=ibm-1047 git-encoding=utf-8
+.gitattributes zos-working-tree-encoding=iso8859-1 git-encoding=utf-8
+.gitignore zos-working-tree-encoding=iso8859-1 git-encoding=utf-8
