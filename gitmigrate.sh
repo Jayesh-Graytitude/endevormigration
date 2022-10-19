@@ -89,13 +89,25 @@ if [ $GitResponce == '200' ]; then
 else
     echo "** Git repo name is available to create as a new one"
 	echo ''
-	NewRepoUrl=$(curl -X POST -u $user:$token https://api.github.com/user/repos -d \
-			'{"name": "'$reponame'","description":"Creating new repository '$reponame'","auto_init":"true","public":"true"}' \
-			| grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
+fi
+#
+#NewRepoUrl=$(curl -X POST -u $user:$token https://api.github.com/user/repos -d \
+#		'{"name": "'$reponame'","description":"Creating new repository '$reponame'","auto_init":"true","public":"true"}' \
+#		| grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
+NewRepoUrl1=$(curl -X POST -u $user:$token https://api.github.com/user/repos -d \
+		'{"name": "'$reponame'","description":"Creating new repository '$reponame'","auto_init":"true","public":"true"}')
+#
+if [ -z "$NewRepoUrl1" ]; then
+	echo ''
+	echo "** Git repository is not created...verify the logs and rectify the issue"
+	echo ''	
+	exit 1
+else
+    NewRepoUrl=$NewRepoUrl1
 	echo ''
 	echo "** New Git repository ${NewRepoUrl} created successfully"
 	echo ''
-fi
+fi	
 #
 #############################################################
 # Below step clones the newly created GitHub repo to local  #
@@ -122,9 +134,9 @@ git clone $NewRepoUrl
 # This step triggers migration process for the application. #
 #############################################################
 #
-cd "${ussgitpath}/temptest"
-echo ''
-sh migrate.sh
+#cd "${ussmigrutl}"
+#echo ''
+#sh migrate.sh
 echo ''
 echo "** Migration completed....please verify"
 echo ''
