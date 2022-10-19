@@ -32,7 +32,7 @@ echo "*******************************************************************"
 echo ''
 read -p "USS Path for migration utility: " ussmigrutl
 #
-if [ -f $ussmigrutl ]; then
+if [ -d $ussmigrutl ]; then
     echo "** Migration utility is present...continuing"
 else
     echo "** Error: $ussmigrutl not found. Please start again with a valid path for migration utility"
@@ -137,9 +137,9 @@ git clone -q "$NewRepoUrl" "$ussgitpath/$reponame"
 # This step triggers migration process for the application. #
 #############################################################
 #
-#cd "${ussmigrutl}"
-#echo ''
-#sh migrate.sh
+cd "${ussmigrutl}"
+echo ''
+sh migrate.sh -r "$ussgitpath" "$ussmapfil" 
 echo ''
 echo "** Migration completed....please verify"
 echo ''
