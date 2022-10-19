@@ -103,7 +103,7 @@ if [ -z "$NewRepoUrl1" ]; then
 	echo ''	
 	exit 1
 else
-    NewRepoUrl=$NewRepoUrl1
+    NewRepoUrl="${FullRepoUrl}.git"
 	echo ''
 	echo "** New Git repository ${NewRepoUrl} created successfully"
 	echo ''
@@ -130,8 +130,8 @@ fi
 echo "** Clonning new git repository to USS"
 echo ''
 #
-git clone -q "$NewRepoUrl" "$ussgitpath/$reponame"
-git clone -q http://github.com/Jayesh-Graytitude/ABC7.git
+#git clone -q "$NewRepoUrl" "$ussgitpath/$reponame"
+git clone -q "http://github.com/Jayesh-Graytitude/ABC7.git"
 #
 #############################################################
 # This step triggers migration process for the application. #
