@@ -131,7 +131,7 @@ echo "** Clonning new git repository to USS"
 echo ''
 #
 git clone -q "$NewRepoUrl" "$ussgitpath/$reponame"
-git clone -q https://github.com/Jayesh-Graytitude/ABC6.git
+git clone -q http://github.com/Jayesh-Graytitude/ABC7.git
 #
 #############################################################
 # This step triggers migration process for the application. #
