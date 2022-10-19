@@ -118,6 +118,7 @@ fi
 #
 cd $ussgitpath
 pwd
+echo "$NewRepoUrl"
 #
 if [ -d $reponame ]; then
 	echo ''
@@ -130,6 +131,7 @@ echo "** Clonning new git repository to USS"
 echo ''
 #
 git clone -q "$NewRepoUrl" "$ussgitpath/$reponame"
+git clone -q https://github.com/Jayesh-Graytitude/ABC6.git
 #
 #############################################################
 # This step triggers migration process for the application. #
