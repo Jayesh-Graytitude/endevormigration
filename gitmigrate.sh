@@ -94,7 +94,7 @@ fi
 #NewRepoUrl=$(curl -X POST -u $user:$token https://api.github.com/user/repos -d \
 #		'{"name": "'$reponame'","description":"Creating new repository '$reponame'","auto_init":"true","public":"true"}' \
 #		| grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
-NewRepoUrl1=$(curl -X POST -u $user:$token https://api.github.com/user/repos -d \
+NewRepoUrl1=$(curl --insecure -X POST -u $user:$token https://api.github.com/user/repos -d \
 		'{"name": "'$reponame'","description":"Creating new repository '$reponame'","auto_init":"true","public":"true"}')
 #
 if [ -z "$NewRepoUrl1" ]; then
