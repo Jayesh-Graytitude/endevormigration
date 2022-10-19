@@ -129,7 +129,7 @@ fi
 echo "** Clonning new git repository to USS"
 echo ''
 #
-git clone -q $NewRepoUrl $ussgitpath
+git clone -q "$NewRepoUrl" "$ussgitpath"
 #
 #############################################################
 # This step triggers migration process for the application. #
