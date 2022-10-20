@@ -173,7 +173,7 @@ pwd
 #
 sh migrate.sh -r "$ussgitpath" "$ussmapfil" 
 #
-cp "/u/jayesh-zappbuild-sandbox/migration_test/workspace/Sample-MortgageApplication" "$ussgitpath/$reponame"
+cp "/u/jayesh-zappbuild-sandbox/migration_test/workspace/Sample-MortgageApplication/.gitattributes" "$ussgitpath/$reponame"
 #
 echo "** Migration completed....please verify"
 echo ''
