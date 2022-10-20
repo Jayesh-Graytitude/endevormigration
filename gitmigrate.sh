@@ -122,19 +122,24 @@ if [ -z "$NewRepoUrl1" ]; then
 	echo "** Error: Git repository is not created...verify the logs and rectify the issue"
 	echo ''	
 	exit 1
+else
+ 	NewRepoUrl="${FullRepoUrl}.git"
+	echo ''
+    echo "** New Git repository ${NewRepoUrl} created successfully"
+	echo ''	
 fi
 #
 GitResponce1=$(curl -s -o /dev/null -I -w "%{http_code}" $FullRepoUrl)
 #
-if [ $GitResponce1 == '200' ]; then
-	NewRepoUrl="${FullRepoUrl}.git"
-	echo ''
-    echo "** New Git repository ${NewRepoUrl} created successfully"
-	echo ''
-else
-    echo "** Error: Git repository is not created...verify the logs/check the Git credential and restart the process"
-	exit 1
-fi	
+#if [ $GitResponce1 == '200' ]; then
+#	NewRepoUrl="${FullRepoUrl}.git"
+#	echo ''
+#    echo "** New Git repository ${NewRepoUrl} created successfully"
+#	echo ''
+#else
+#    echo "** Error: Git repository is not created...verify the logs/check the Git credential and restart the process"
+#	exit 1
+#fi	
 #
 #############################################################
 # Below step clones the newly created GitHub repo to local  #
